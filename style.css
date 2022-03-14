@@ -17,8 +17,8 @@ main {
 
 main h2 {
     font-weight: bolder;
-    font-size: 28px;
-
+    font-size: 22px;
+    /* background-color: yellow; */
 }
 
 main p {
@@ -26,6 +26,55 @@ main p {
     font-weight: lighter;
     font-size: 14px;
 }
+
+.title{
+    display:inline-block;
+    overflow:hidden;
+    white-space:nowrap;
+}
+
+@media (min-width:640px) {
+    .title:first-of-type {    /* For increasing performance 
+        ID/Class should've been used. 
+        For a small demo 
+        it's okaish for now */
+    animation: showup 10s ;
+    }
+    
+    .title:last-of-type {
+    /* width:0px; */
+    animation: reveal 10s ;
+    }
+    
+    .title:last-of-type span {
+    /* margin-left:-355px; */
+    animation: slidein 10s ;
+    }
+    
+    @keyframes showup {
+    0% {opacity:0;}
+    20% {opacity:1;}
+    80% {opacity:1;}
+    100% {opacity:1;}
+    }
+    
+    @keyframes slidein {
+    0% { margin-left:-700px; }
+    20% { margin-left:-700px; }
+    35% { margin-left:0px;}
+    100% { margin-left:0px; }
+    }
+    
+    @keyframes reveal {
+    0% {opacity:0;width:0px;}
+    20% {opacity:1;width:0px;}
+    30% {width:298px;}
+    80% {opacity:1;}
+    100% {opacity:1;width:298px;}
+    }
+    
+}
+
 
 .content {
     position: relative;
@@ -129,22 +178,22 @@ main p {
 @keyframes morph {
     0% {
         border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-        background-color: rgb(244, 67, 54);
-        box-shadow: rgba(244, 67, 54, 0.4) -5px 5px, rgba(244, 67, 54, 0.3) -10px 10px, rgba(244, 67, 54, 0.2) -15px 15px, rgba(244, 67, 54, 0.1) -20px 20px, rgba(244, 67, 54, 0.05) -25px 25px;
+        background-color: rgb(211, 47, 47);
+        box-shadow: rgba(211, 47, 47, 0.4) -5px 5px, rgba(211, 47, 47, 0.3) -10px 10px, rgba(211, 47, 47, 0.2) -15px 15px, rgba(211, 47, 47, 0.1) -20px 20px, rgba(211, 47, 47, 0.05) -25px 25px;
     }
     
     50% {
         border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
-        background-color: rgb(76, 175, 80);
-        box-shadow: rgba(76, 175, 80, 0.4) -5px 5px, rgba(76, 175, 80, 0.3) -10px 10px, rgba(76, 175, 80, 0.2) -15px 15px, rgba(76, 175, 80, 0.1) -20px 20px, rgba(244, 67, 54, 0.05) -25px 25px;
-        /* background: linear-gradient(45deg, var(--third) 0%, var(--secondary) 100%); */
+        background-color: rgb(55, 71, 79);
+        box-shadow: rgba(55, 71, 79, 0.4) -5px 5px, rgba(55, 71, 79, 0.3) -10px 10px, rgba(55, 71, 79, 0.2) -15px 15px, rgba(55, 71, 79, 0.1) -20px 20px, rgba(55, 71, 79, 0.05) -25px 25px;
+        
     }
     
     100% {
         border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-        background-color: rgb(244, 67, 54);
-        box-shadow: rgba(244, 67, 54, 0.4) -5px 5px, rgba(244, 67, 54, 0.3) -10px 10px, rgba(244, 67, 54, 0.2) -15px 15px, rgba(244, 67, 54, 0.1) -20px 20px, rgba(244, 67, 54, 0.05) -25px 25px;
-        /* background: linear-gradient(45deg, var(--primary) 0%, var(--secondary) 100%); */
+        background-color: rgb(211, 47, 47);
+        box-shadow: rgba(211, 47, 47, 0.4) -5px 5px, rgba(211, 47, 47, 0.3) -10px 10px, rgba(211, 47, 47, 0.2) -15px 15px, rgba(211, 47, 47, 0.1) -20px 20px, rgba(211, 47, 47, 0.05) -25px 25px;
+        
     }
     
 
